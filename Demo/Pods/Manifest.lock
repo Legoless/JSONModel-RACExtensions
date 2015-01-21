@@ -1,0 +1,26 @@
+PODS:
+  - JSONModel (1.0.2)
+  - JSONModel-RACExtensions (0.1.0):
+    - JSONModel (~> 1.0)
+    - ReactiveCocoa (~> 2.0)
+  - ReactiveCocoa (2.4.4):
+    - ReactiveCocoa/UI (= 2.4.4)
+  - ReactiveCocoa/Core (2.4.4):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.4.4)
+  - ReactiveCocoa/UI (2.4.4):
+    - ReactiveCocoa/Core
+
+DEPENDENCIES:
+  - JSONModel-RACExtensions (from `../JSONModel-RACExtensions.podspec`)
+
+EXTERNAL SOURCES:
+  JSONModel-RACExtensions:
+    :path: ../JSONModel-RACExtensions.podspec
+
+SPEC CHECKSUMS:
+  JSONModel: cbdef0fdff1cc70e913a860861d3072860efd3a1
+  JSONModel-RACExtensions: 8a80d10b67f8dd5e48e06f6e7cf898188ecf0cab
+  ReactiveCocoa: 31119068e3dde866bd257cf74e1f06b4023bf387
+
+COCOAPODS: 0.36.0.beta.1
