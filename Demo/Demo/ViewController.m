@@ -35,6 +35,8 @@
     
     NSDictionary *object5 = @{ @"testString" : @"test5", @"testInteger" : @345678, @"testString2" : @"test123" };
     
+    NSLog(@"------------ TRAVERSING ------------");
+    
     //
     // Test array
     //
@@ -95,7 +97,7 @@
         NSLog(@"Error: %@", error);
     }];
     
-    NSLog(@"--- SMART FUNCTIONS ---");
+    NSLog(@"------------ SMART FUNCTIONS ------------");
     
     //
     // Normal parse for object
@@ -137,7 +139,7 @@
         NSLog(@"Error: %@", error);
     }];
 
-    NSLog(@"--- TRAVERSE FUNCTIONS ---");
+    NSLog(@"------------ TRAVERSE FUNCTIONS ------------");
 
     //
     // Normal parse for object
@@ -183,7 +185,7 @@
     // Traverse objects
     //
     
-    NSLog(@"--- TRAVERSE OBJECTS ---");
+    NSLog(@"------------ TRAVERSE OBJECTS ------------");
     
     //
     // Should fail for fake array
@@ -231,6 +233,41 @@
         NSLog(@"Error: %@", error);
     }];
     
+    //
+    // RAC Tuples
+    //
+    
+    NSLog(@"------------ RAC Tuples ------------");
+    
+    RACTuple* tuple1 = RACTuplePack (testArray);
+    RACTuple* tuple2 = RACTuplePack (object1);
+    RACTuple* tuple3 = RACTuplePack (object2);
+    RACTuple* tuple4 = RACTuplePack (object5);
+    
+    [[TestModel parseSignalForObject:tuple1] subscribeNext:^(TestModel *x){
+        NSLog(@"Model: %@", x);
+    } error:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
+    [[TestModel parseSignalForObject:tuple2] subscribeNext:^(TestModel *x){
+        NSLog(@"Model: %@", x);
+    } error:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
+    
+    [[TestModel parseSignalForObject:tuple3] subscribeNext:^(TestModel *x){
+        NSLog(@"Model: %@", x);
+    } error:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
+    [[TestModel parseSignalForObject:tuple4] subscribeNext:^(TestModel *x){
+        NSLog(@"Model: %@", x);
+    } error:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 @end

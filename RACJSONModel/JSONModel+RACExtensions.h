@@ -12,9 +12,9 @@
 
 /*!
  *  Parse signal for any object. If object is a dictionary and not a model,
- *  the signal will traverse the key-values for arrays or dictionaries of the model.
+ *  the signal will traverse the key-values for arrays or dictionaries of the model. This method will also traverse key-values in RACTuple
  *
- *  @param object dictionary or array
+ *  @param object dictionary or array or RACTuple
  *
  *  @return signal
  */

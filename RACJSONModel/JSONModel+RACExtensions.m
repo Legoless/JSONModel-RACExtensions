@@ -141,11 +141,20 @@
     {
         return createdObject;
     }
-    else if (!createdObject && [object isKindOfClass:[NSDictionary class]])
+    else if (!createdObject && [object conformsToProtocol:@protocol(NSFastEnumeration)])
     {
         for (id key in object)
         {
-            id internalObject = [self objectForModelObject:object[key] withError:error];
+            id internalObject = nil;
+            
+            if ([object respondsToSelector:@selector(objectForKeyedSubscript:)])
+            {
+                internalObject = [self objectForModelObject:object[key] withError:error];
+            }
+            else
+            {
+                internalObject = [self objectForModelObject:key withError:error];
+            }
             
             if (internalObject)
             {
