@@ -153,7 +153,7 @@
             }
             else
             {
-                internalObject = [self objectForModelObject:key withError:error];
+                internalObject = [self objectByTraversingObject:key withError:error];
             }
             
             if (internalObject)

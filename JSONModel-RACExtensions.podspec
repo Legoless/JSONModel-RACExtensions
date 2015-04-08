@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JSONModel-RACExtensions"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "JSONModel-RACExtensions is a delightful extension to the JSONModel classes for iOS and Mac OS X."
   s.homepage     = "https://github.com/legoless/JSONModel-RACExtensions"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
