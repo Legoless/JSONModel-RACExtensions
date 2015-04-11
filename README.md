@@ -7,6 +7,10 @@ Usage
 
 Install the library with CocoaPods.
 
+```
+pod 'JSONModel-RACExtensions'
+```
+
 Import the RACJSONModel.h file:
 
 ```
