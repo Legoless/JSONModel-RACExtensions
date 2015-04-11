@@ -1,15 +1,24 @@
 # JSONModel-RACExtensions
 
-ReactiveCocoa support for widely used JSONModel library by Marin Todorov.
+ReactiveCocoa support for widely used **JSONModel** library by Marin Todorov. It was designed to work with libraries for **AFNetworking** and their corresponding **RACExtensions**.
 
 Usage
 ======
 
 Install the library with CocoaPods.
 
-Import the RACJSONModel.h file.
+Import the RACJSONModel.h file:
 
-See the header for signal wraps.
+```
+#import "RACJSONModel.h"
+```
+
+The most important method in `RACJSONModel` is `parseSignalForObject:`, which will take a parameter of next types:
+- `NSDictionary`
+- `NSArray`
+- `RACTuple`.
+
+Method must be called on it's corresponding `JSONModel` class. If the model cannot parse the first level of keys (in case of `NSDictionary` or `RACTuple`) it will try to parse the contents of each key.
 
 Contact
 ======
